@@ -4,38 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Únete a la sala · Kultureta</title>
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../icon-32.png">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta name="theme-color" content="#1A0838">
 <meta name="description" content="Te han invitado a un Concurso en directo en Kultureta.">
 <meta property="og:title" content="¡Te han invitado a un Concurso en Kultureta!">
 <meta property="og:description" content="Toca para entrar en la sala y jugar en directo.">
+<meta property="og:image" content="https://javiergg00.github.io/kultureta-privacidad/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root { --bg1:#5B33B8; --bg2:#3B0F7A; --bg3:#14052F; --gold1:#FFE7A3; --gold2:#D9A93F; --gold3:#8A6118; --ink:#2A1A05; --cream:#FFF4D6; }
+  :root { --noche:#1A0838; --noche2:#3B0F7A; --oro:#D9A93F; --oro-claro:#FFE7A3; --oro-osc:#8A6118; --crema:#FFF8EC; --tinta:#22163A; --tinta2:#5B4E73; --linea:#E8DCC2; }
   * { box-sizing: border-box; }
-  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px;
-    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--cream);
-    background: radial-gradient(120% 90% at 50% 0%, var(--bg1) 0%, var(--bg2) 50%, var(--bg3) 100%); }
-  .card { width:100%; max-width:380px; text-align:center; padding:28px 22px; border-radius:26px;
-    border:3px solid var(--gold2); background: rgba(20,5,47,.55); box-shadow: 0 24px 50px -20px rgba(0,0,0,.7); }
-  img { width:88px; height:88px; border-radius:22px; }
-  h1 { font-size:1.5rem; margin:14px 0 6px; color: var(--gold1); }
-  p { margin:0 0 18px; opacity:.92; }
-  .code { display:inline-block; font-size:2rem; font-weight:900; letter-spacing:.25em; padding:6px 16px 6px 22px;
-    border:2px dashed var(--gold2); border-radius:14px; margin-bottom:20px; color:#fff; }
-  .btn { display:block; width:100%; padding:15px; border-radius:999px; font-weight:900; font-size:1.1rem; text-decoration:none;
-    background: linear-gradient(180deg, var(--gold1), var(--gold2) 55%, #B9842A); color: var(--ink); box-shadow: 0 4px 0 var(--gold3); }
-  .alt { display:block; margin-top:16px; color: var(--gold1); font-size:.92rem; }
-  .small { font-size:.85rem; opacity:.8; margin-top:18px; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px 16px;
+    font: 700 16px/1.5 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--tinta); background: var(--crema); }
+  .card { width:100%; max-width:380px; text-align:center; border-radius:26px; overflow:hidden; background:#fff;
+    border:3px solid var(--oro); box-shadow: 0 24px 50px -24px rgba(34,22,58,.45); }
+  .top { padding:26px 22px 20px; color:var(--crema);
+    background: radial-gradient(140% 160% at 0% 0%, #3B0F7A 0%, #2A0B5E 50%, #14052F 100%); border-bottom:3px solid var(--oro); }
+  .top img { width:84px; height:84px; display:block; margin:0 auto; filter: drop-shadow(0 8px 14px rgba(0,0,0,.45)); }
+  h1 { font-weight:900; font-size:1.45rem; line-height:1.2; margin:14px 0 4px; color: var(--oro-claro); }
+  .top p { margin:0; color: rgba(255,248,236,.85); }
+  .body { padding:22px 22px 24px; }
+  .label { font-size:.72rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color: var(--tinta2); }
+  .code { display:inline-block; font-size:2.2rem; font-weight:900; letter-spacing:.22em; padding:4px 12px 4px 20px; margin:4px 0 20px;
+    border:2px dashed var(--oro); border-radius:16px; color: var(--noche); }
+  .btn { display:block; width:100%; padding:15px; border-radius:16px; font-weight:900; font-size:1.15rem; text-decoration:none;
+    background: linear-gradient(180deg, #FFE7A3 0%, #E8BC55 48%, #D9A93F 100%); color:#2A1A05; box-shadow: 0 4px 0 var(--oro-osc); }
+  .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--oro-osc); }
+  .alt { display:block; margin-top:12px; padding:13px; border-radius:16px; border:2px solid var(--oro); color: var(--tinta); text-decoration:none; font-weight:900; }
+  .small { font-size:.85rem; color: var(--tinta2); margin:16px 0 0; }
+  footer { margin-top:18px; font-size:.8rem; color: var(--tinta2); }
+  footer a { color: var(--oro-osc); }
 </style>
 </head>
 <body>
   <main class="card">
-    <img src="logo.svg" alt="Kultureta">
-    <h1>¡Te han invitado a un Concurso!</h1>
-    <p>Toca el botón para entrar en la sala y jugar en directo.</p>
-    <div class="code" id="code">·····</div>
-    <a class="btn" id="open" href="#">Entrar en la sala</a>
-    <a class="alt" id="store" href="https://play.google.com/store/apps/details?id=com.javier.kultureta">¿No tienes Kultureta? Descárgala en Google Play</a>
-    <p class="small">Si no se abre, entra en Kultureta → Duelos → Aceptar un reto y escribe el código.</p>
+    <div class="top">
+      <img src="../logo.svg" alt="Kultureta">
+      <h1>¡Te han invitado a un Concurso!</h1>
+      <p>Entra en la sala y juega en directo.</p>
+    </div>
+    <div class="body">
+      <div class="label">Código de sala</div>
+      <div class="code" id="code">·····</div>
+      <a class="btn" id="open" href="#">Entrar en la sala</a>
+      <a class="alt" id="store" href="https://play.google.com/store/apps/details?id=com.javier.kultureta">Descargar Kultureta</a>
+      <p class="small">Si no se abre: Kultureta → Duelos → Aceptar un reto, y escribe el código.</p>
+    </div>
   </main>
+  <footer><a href="../">Política de privacidad</a></footer>
 <script>
   (function () {
     var m = location.search.match(/[?&]c=([A-Za-z0-9]{5})/);
