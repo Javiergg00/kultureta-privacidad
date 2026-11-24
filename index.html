@@ -7,18 +7,18 @@
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="apple-touch-icon" href="icon-180.png">
-<meta name="theme-color" content="#1A0838">
+<meta name="theme-color" content="#0A3B3F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#FFF8EC; --card:#fff; --text:#22163A; --text2:#5B4E73; --accent:#8A6118; --line:#E8DCC2; --oro:#D9A93F; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#120826; --card:#1E1238; --text:#FFF8EC; --text2:#BDB0D6; --accent:#FFE7A3; --line:#3A2A5E; } }
+  :root { --bg:#FBF5EA; --card:#fff; --text:#1D2B2E; --text2:#566A6C; --accent:#A0773F; --line:#E7DCC6; --oro:#E9C58F; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#071F22; --card:#0F2E31; --text:#FBF5EA; --text2:#A9C1BF; --accent:#F3D9AE; --line:#24504F; } }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--text); font:600 16px/1.65 'Nunito', system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  .bar { background: radial-gradient(140% 160% at 0% 0%, #3B0F7A 0%, #2A0B5E 50%, #14052F 100%); border-bottom:3px solid var(--oro); }
+  .bar { background: radial-gradient(140% 160% at 0% 0%, #136168 0%, #0F5257 50%, #072B2E 100%); border-bottom:3px solid var(--oro); }
   .bar div { max-width:760px; margin:0 auto; padding:14px 16px; display:flex; align-items:center; gap:12px; }
   .bar img { width:44px; height:44px; }
-  .bar b { font-weight:900; font-size:1.35rem; color:#FFE7A3; }
+  .bar b { font-weight:900; font-size:1.35rem; color:#F3D9AE; }
   main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
   .card { background:var(--card); border:2px solid var(--line); border-radius:20px; padding:28px 22px; }
   h1 { font-weight:900; font-size:1.7rem; line-height:1.2; margin:0 0 4px; }
@@ -58,7 +58,7 @@ Contacto: <a href="mailto:javiergomezgijon@gmail.com">javiergomezgijon@gmail.com
 <p>Estos datos se borran si borras los datos de la app o la desinstalas.</p>
 
 <h2>3. Datos que se envían a un servidor: solo si usas los Duelos, los Amigos, el Concurso o el Ranking</h2>
-<p>La función <b>Duelo</b> permite retar a un amigo mediante un código; <b>Amigos</b> permite añadir a otros jugadores por su ID y enviarles retos; el <b>Concurso en directo</b> permite jugar a la vez con hasta 3 personas más en una sala; y el <b>Ranking</b> (opcional, dentro de Duelos) muestra las mejores marcas de los jugadores que deciden apuntarse. Para todo ello la app usa <b>Google Firebase</b> (Firebase Authentication y Cloud Firestore), un servicio de Google. Solo en esos casos se tratan estos datos:</p>
+<p>La función <b>Duelo</b> permite retar a un amigo mediante un código; <b>Amigos</b> permite añadir a otros jugadores por su ID y enviarles retos; el <b>Concurso en directo</b> permite jugar a la vez con hasta 3 personas más en una sala; la <b>Partida del día</b> permite comparar tu resultado del día con tus amigos; y el <b>Ranking</b> (opcional, dentro de Duelos) muestra las mejores marcas de los jugadores que deciden apuntarse. Para todo ello la app usa <b>Google Firebase</b> (Firebase Authentication y Cloud Firestore), un servicio de Google. Solo en esos casos se tratan estos datos:</p>
 <table>
   <tr><th>Dato</th><th>Para qué</th></tr>
   <tr><td>Un identificador anónimo de sesión (creado por Firebase) y un identificador aleatorio de jugador generado por la app</td><td>Saber qué resultados son de cada jugador y proteger los duelos para que solo los participantes puedan modificarlos. No están ligados a tu nombre real ni a tu cuenta de Google.</td></tr>
@@ -68,6 +68,7 @@ Contacto: <a href="mailto:javiergomezgijon@gmail.com">javiergomezgijon@gmail.com
   <tr><td><b>Solo si usas Amigos:</b> tu lista de amigos, las solicitudes enviadas y recibidas, los jugadores que bloqueas y los retos que envías o recibes (quién lo envía, a quién, el código y la fecha)</td><td>Que puedas añadir amigos, retarles y recibir sus retos dentro de la app.</td></tr>
   <tr><td><b>Solo si juegas un Concurso en directo:</b> tu nombre, tu avatar, tus respuestas y tu puntuación en la sala, y una señal periódica de que sigues conectado</td><td>Que la partida funcione a la vez en todos los móviles y saber quién gana.</td></tr>
   <tr><td><b>Solo si creas una copia de seguridad:</b> una copia de tu progreso guardado en la app (nombre, avatar, ID de jugador, récords, racha, progreso y ajustes) y los ID de tus amigos</td><td>Que puedas recuperar tu progreso en otro móvil con tu código de recuperación.</td></tr>
+  <tr><td><b>Solo si terminas la Partida del día y tienes amigos o estás en el Ranking:</b> tu nombre, tu avatar, tu ID de jugador, el tema del día, cuántas preguntas acertaste, el tiempo que tardaste y la fecha</td><td>Que tus amigos vean qué tal te ha ido hoy y, si estás en el Ranking, aparecer en el ranking del día (solo con tu nombre, tu avatar y tu resultado).</td></tr>
   <tr><td><b>Solo si te apuntas al Ranking:</b> tu nombre de jugador y tu mejor marca en cada juego y nivel, con su fecha</td><td>Mostrarlos en el ranking público, visible para todos los jugadores de Kultureta. Puedes usar un apodo.</td></tr>
   <tr><td><b>Solo si denuncias un nombre del Ranking:</b> el nombre denunciado y tu identificador anónimo</td><td>Revisar nombres ofensivos y retirarlos.</td></tr>
 </table>
